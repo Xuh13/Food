@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "主页",
+  "usingComponents": {
+    "mp-searchbar": "../weui-miniprogram/searchbar/searchbar"
+  }
 }
