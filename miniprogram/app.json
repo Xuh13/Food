@@ -13,6 +13,8 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d81e06",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "主页",
