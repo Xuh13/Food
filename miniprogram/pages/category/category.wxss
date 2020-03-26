@@ -1,1 +1,27 @@
 /* pages/category/category.wxss */
+page{
+  display: block;
+}
+.category_box{
+  width:371rpx;
+  height: 200rpx;
+  border: 2rpx solid #BBBBBB;
+  float: left;
+}
+
+.category_box_img{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 50rpx;
+  float: left;
+}
+
+.category_box_txt{
+  width: 271rpx;
+  height: 200rpx;
+  float: left;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+}

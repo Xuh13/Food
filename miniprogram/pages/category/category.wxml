@@ -1,5 +1,13 @@
 <view class="page">
-    <view class="page__bd">
-        <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
-    </view>
+  <view class="page__bd">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  </view>
+</view>
+
+<view class="category_box" wx:for="{{box_list}}" wx:for-item="aaa"> 
+  <image src="{{aaa.src}}" class="category_box_img"></image>
+  <view class="category_box_txt">
+    <text>{{aaa.name}}:\n</text>
+    <text>{{aaa.txt}}</text>
+  </view>
 </view>

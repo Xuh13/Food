@@ -25,25 +25,23 @@ Page({
     inputVal: "",
     box_list: [{
       id: 0,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/蔬菜.png",
-      name: "白菜",
-      txt: "冬日白菜美如笋\n菜里唯有白菜鲜"
+      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜1.jpg",
+      name: "醋溜白菜",
+      txt: "酸酸辣辣的，这酸爽~~~O(∩_∩)O~",
+      tags: ["蔬菜","白菜","酸辣"]
     }, {
       id: 1,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白萝卜.png",
-      name: "白萝卜",
-      txt: "冬吃萝卜夏吃姜\n不劳医生开药方"
+      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜2.jpg",
+      name: "干煸白菜",
+      txt: "如果把酸辣土豆丝比喻为“大众情人”的话 那么干煸白菜就是“梦中情人",
+      tags: ["家常菜","秋季食谱"]
     }, {
       id: 2,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/菠菜.png",
-      name: "菠菜",
-      txt: "菠菜豆腐虽贱\n山珍海味不换"
-    }, {
-      id: 3,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/韭菜.png",
-      name: "韭菜",
-      txt: "韭菜花开心一枝\n花正黄时叶正肥"
-    }, ]
+      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜3.jpg",
+      name: "砂锅白菜炖豆腐",
+      txt: "白菜最家常的做法就是大白菜和豆腐一起炖烧了，做法简单却是营养滋补",
+      tags: ["家常菜","冬季食谱"]
+    }]
   },
 
   /**

@@ -1,0 +1,44 @@
+/* pages/category/category.wxss */
+page{
+  display: block;
+}
+.search_list_box{
+  width:100%;
+  height: 200rpx;
+  border: 2rpx solid #BBBBBB;
+  float: left;
+}
+
+.search_list_img{
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+
+.search_list_box_txt{
+  width: 550rpx;
+  height: 200rpx;
+  float: left;
+  font-size: 28rpx;
+}
+
+.search_list_box_name{
+  width: 550rpx;
+  height: 50rpx;
+  float: left;
+}
+
+.search_list_box_synopsis{
+  width: 550rpx;
+  height: 100rpx;
+  float: left;
+}
+
+.search_list_box_tag{
+  width: 550rpx;
+  height: 50rpx;
+  float: left;
+}
