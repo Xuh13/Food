@@ -6,7 +6,44 @@ Page({
    */
   data: {
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    autoplay: true,
+    dotsBoll: false,
+    interval: 3000,
+    duration: 1000,
+    current: 0,
+    imageUrls: [
+      'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜1.jpg',
+      'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/timg.jpg',
+      'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/timg (2).jpg'
+    ]
+  },
+
+  intervalChange: function (e) {//自动切换时间间隔
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {//滑动动画时长
+    duration: e.detail.value
+  },
+  changeIndicatorDots: function (e) {//是否显示小圆圈
+    this.setData({
+      dotsBoll: !this.data.dotsBoll
+    })
+  },
+  changeAutoplay: function (e) {//是否自动播放
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  swipclick: function (e) {//点击图片触发事件
+    console.log(this.data.imageUrls[this.data.current]);
+  },
+  bindchange: function (e) {//轮播图发生改变
+    this.setData({
+      current: e.detail.current
+    })
   },
 
   search: function (value) {

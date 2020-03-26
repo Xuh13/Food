@@ -4,3 +4,10 @@
         <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
     </view>
 </view>
+<swiper indicator-dots="{{dotsBoll}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" bindchange="bindchange" id="swiper-main">
+    <block wx:for-items="{{imageUrls}}">
+        <swiper-item >
+            <image src="{{item}}" height="300px" width="355px" bindtap="swipclick"></image>
+        </swiper-item>
+    </block>
+</swiper>
