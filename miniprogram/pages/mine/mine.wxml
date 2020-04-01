@@ -1,0 +1,113 @@
+<!--pages/mine/mine.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class='weui-flex'>
+      <view class='weui-flex__item'>
+        <view class='HeadPortrait'>
+          <image class='headpor' src='../../images/4.png'></image>
+        </view>
+      </view>
+      <view class='weui-flex__item'>
+        <view class='page__title name'>我还是从前那个少年</view>
+        <button class="data" size="mini" style='font-size: 10pt !important;'>编辑资料</button>
+        </view>
+      <view class='weui-flex__item'>
+        <view class='two'>
+          <image class='news' src='../../images/new.png'></image>
+          <view class='weui-badge newpro'>8</view>
+          <view class='mores'>
+            <view class='list-more' bindtap='bindShowMsg'>
+              <image style="color:{{color}}" class='more' src='../../images/more.png'></image>
+             
+            </view>
+            <cover-view class="select_box" wx:if="{{select}}">
+              <cover-view class="select_one" bindtap="mySelect" data-name="使用说明">使用说明</cover-view>
+              <cover-view class="select_one" bindtap="mySelect" data-name="反馈我们">反馈我们</cover-view>
+              <cover-view class="select_one" bindtap="mySelect" data-name="浏览记录">浏览记录</cover-view>
+              <cover-view class="select_one" bindtap="mySelect" data-name="退出登录">退出登录</cover-view>
+            </cover-view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='page__bd namepro'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" placeholder="您还没有填入个性签名（简介），点击填写ba..." />
+        <!-- <view class="weui-textarea-counter">0/200</view> -->
+      </view>
+    </view>
+  </view>
+  <view class='page__bd max'>
+    <view class='weui-flex'>
+      <view class='weui-flex__item'>
+        <view class='zan aa'>
+          <view class='shu'>422</view>
+          <view><image class='aa-img' src="../../images/zan.png"></image>获赞</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-flex'>
+      <view class='weui-flex__item'>
+      <view class='fen aa'>
+          <view class='shu'>12</view>
+          <view><image class='aa-img' src="../../images/fen.png"></image>粉丝</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-flex'>
+      <view class='weui-flex__item'>
+         <view class='zun aa'>
+          <view class='shu'>1</view>
+          <view><image class='aa-img' src="../../images/guan.png"></image>关注</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-flex'>
+      <view class='weui-flex__item'>
+       <view class='ji aa'>
+          <view class='shu'>439</view>
+          <view><image class='aa-img' src="../../images/ji.png"></image>积分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<view class='page__bd ticket-container'>
+    <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
+      scroll-top="{{scrollTop}}">
+      <!--Tab布局-->
+      <view class='title'>
+        <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+          <text>作品</text>
+          <hr class="line-style"/>
+        </view>
+        
+        <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+          <text>收藏</text>
+          <hr class="line-style"/>
+        </view>
+        <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
+          <text>草稿</text>
+          <hr class="line-style" />
+        </view>
+      </view>
+ 
+      
+    </scroll-view>
+</view>
+
+
+
+
+
+
+
+
+</view>
+
+

@@ -1,0 +1,196 @@
+.page{
+margin-right:15rpx;
+margin-left:15rpx;
+}
+.page__hd{
+margin-top:50rpx;
+margin-bottom:23rpx;
+margin-right:-30rpx;
+margin-left:10rpx;
+padding-top: 10rpx;
+padding-left: 10rpx;
+/* background: #d8d8d8; */
+}
+
+.headpor{
+height: 120rpx;
+width: 120rpx;
+border-radius:60px;
+}
+.name{
+height: 50rpx;
+width: 375rpx;
+margin-left:-110rpx;
+padding-top: 5rpx;
+padding-bottom: 20rpx;
+/* background: #e5a0a0; */
+font-size:36rpx;
+font-family:"Times New Roman",Georgia,Serif;
+font-weight:bold;
+}
+
+
+.data{
+background: rgb(218, 221, 223);
+font-weight:normal;
+margin-left:-110rpx;
+}
+.two{
+  position: relative;
+  display: flex;
+  margin-left:36rpx;
+}
+.news{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 40rpx;
+  opacity: 0.8;
+}
+.newpro{
+  position: absolute;
+  bottom: 44rpx;
+  left: 35rpx;
+}
+.mores{
+  width: 40rpx;
+  position: absolute;
+   left: 80rpx;
+}
+.more{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 32rpx;
+  color: black;
+  /* margin-left: 10rpx; */
+  left: 80rpx;
+}
+.list-more{
+  width: 40rpx;
+}
+.select_box {
+    background-color: #eee;
+    position: absolute;
+    right: -35rpx;
+    top: 100rpx;
+    text-align:center;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.3s;
+    border: 1rpx solid #ccc;
+}
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 170rpx;
+    border: 1px solid #ccc;
+}
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;/* 设置显示的长度  和效果配合才有效  这个不写也行 */
+    }
+}
+.namepro{
+border-bottom: 4rpx solid rgb(219, 215, 215);
+  padding-top: 15rpx;
+
+}
+.weui-cells{
+  left: 20rpx;
+  right: 10rpx;
+}
+.weui-textarea{
+  height: 90rpx;
+background: rgb(246, 246, 246);
+font-family:"Times New Roman",Georgia,Serif;
+}
+.max{
+  display: flex;
+  padding-top: 30rpx;
+}
+.aa{
+  position: relative;
+  width: 180rpx;
+  text-align: center;
+
+}
+.shu{
+  padding-right: 34rpx;
+  
+}
+.aa-img{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 57.5%;
+  left: 9%;
+}
+.aa:hover{
+  background: rgb(228, 227, 227);
+}
+
+
+
+
+
+
+
+.ticket-container{
+    padding-top: 30rpx;
+
+}
+
+.container {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+ 
+.title {
+  width: 100%;
+  height: 88rpx;
+  /* background: white; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #006bff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #006bff;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+
+ 
+
