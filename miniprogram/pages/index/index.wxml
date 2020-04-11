@@ -1,44 +1,13 @@
-
-<view>
-  <view class="page__bd">
-    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
-  </view>
+<!--miniprogram/pages/index/index.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
 </view>
-
-<view>
-  <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" circular="true">
-    <swiper-item>
-      <image src="../../images/cai1.png" class="swiper-image"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="../../images/cai2.png" class="swiper-image"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="../../images/cai3.png" class="swiper-image"></image>
-    </swiper-item>
-  </swiper>
-</view>
-
-<view class="mid-Content">
-  <text class="NowDate">{{nowDate}}</text>
-  <text class="dishName">蒸扇贝</text>
-</view>
-<button class="uploadFile" bindtap="goToShareMine">分享我的食谱</button>
-
-<!-- 导航条 -->
-<view class="footerContent">
-  <!-- <view wx:for="{{homeNavbar}}" wx:key="index" class="home-Navbar" bindtap="">{{item}}</view> -->
-
-  <button class="rankingToday">今日排行</button>
-  <button class="rankingWeek">本周排行</button>
-  <button class="mostClick">最多点击</button>
-</view>
-<view class="dishContent">
-  <view class="dishContainer">
-    <image class="detailImage" src="../../images/cai1.png"></image>
-  </view>
-  <view class="detailDish">红烧茄子</view>
-  <button class="btn"></button>
-  <van-button icon="star-o" type="primary" class="starButton"/>
-</view>
->>>>>>> Stashed changes
+<swiper indicator-dots="{{dotsBoll}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" bindchange="bindchange" id="swiper-main">
+    <block wx:for-items="{{imageUrls}}">
+        <swiper-item >
+            <image src="{{item}}" height="300px" width="355px" bindtap="swipclick"></image>
+        </swiper-item>
+    </block>
+</swiper>

@@ -1,10 +1,205 @@
-/* pages/mine/mine.wxss */.searchbar-result{
-    margin-top: 0;
-    font-size: 14px;
+.page{
+margin-right:20rpx;
+margin-left:20rpx;
+margin-top:35rpx;
 }
-.searchbar-result:before{
-    display: none;
+.page__hd{
+margin-top:50rpx;
+margin-bottom:23rpx;
+margin-right:-30rpx;
+margin-left:10rpx;
+padding-top: 10rpx;
+padding-left: 10rpx;
+/* background: #d8d8d8; */
 }
-.weui-cell{
-    padding: 12px 15px 12px 35px;
+
+.headpor{
+height: 120rpx;
+width: 120rpx;
+border-radius:60px;
 }
+.name{
+height: 50rpx;
+width: 375rpx;
+margin-left:-110rpx;
+padding-top: 5rpx;
+padding-bottom: 20rpx;
+/* background: #e5a0a0; */
+font-size:36rpx;
+font-family:"STKaiti",Georgia,Serif;
+font-weight:bold;
+}
+
+
+.data{
+background: rgb(218, 221, 223);
+font-weight:normal;
+margin-left:-110rpx;
+font-family:"STKaiti",Georgia,Serif;
+}
+.two{
+  position: relative;
+  display: flex;
+  margin-left:36rpx;
+}
+.news{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 40rpx;
+  opacity: 0.8;
+}
+.newpro{
+  position: absolute;
+  bottom: 44rpx;
+  left: 35rpx;
+}
+.mores{
+  width: 40rpx;
+  position: absolute;
+   left: 80rpx;
+}
+.more{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 32rpx;
+  color: black;
+  /* margin-left: 10rpx; */
+  left: 80rpx;
+}
+.list-more{
+  width: 40rpx;
+}
+.select_box {
+    background-color: #eee;
+    position: absolute;
+    right: -35rpx;
+    top: 100rpx;
+    text-align:center;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.3s;
+    border: 1rpx solid #ccc;
+}
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 170rpx;
+    border: 1px solid #ccc;
+}
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;/* 设置显示的长度  和效果配合才有效  这个不写也行 */
+    }
+}
+.namepro{
+border-bottom: 4rpx solid rgb(219, 215, 215);
+  padding-top: 15rpx;
+
+}
+.weui-cells{
+  left: 20rpx;
+  right: 10rpx;
+}
+.weui-textarea{
+  height: 110rpx;
+background: rgb(246, 246, 246);
+font-family:"STKaiti",Georgia,Serif;
+font-size: 35rpx;
+}
+.max{
+  display: flex;
+  padding-top: 50rpx;
+}
+.aa{
+  position: relative;
+  width: 180rpx;
+  text-align: center;
+  font-family:"STKaiti",Georgia,Serif;
+
+}
+.shu{
+  padding-right: 34rpx;
+  
+}
+.aa-img{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 57.5%;
+  left: 9%;
+}
+.ji-img{
+  width: 32rpx;
+  height: 32rpx;
+}
+.aa:hover{
+  background: rgb(228, 227, 227);
+}
+
+
+
+
+
+
+
+.ticket-container{
+    padding-top: 50rpx;
+
+}
+
+.container {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+ 
+.title {
+  width: 100%;
+  height: 88rpx;
+  /* background: white; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family:"STKaiti",Georgia,Serif;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #006bff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #006bff;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+
+ 
+

@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/category/category",
     "pages/search_list/search_list",
-    "pages/mine/mine",
-    "pages/comment/comment"
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -14,6 +13,7 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "style": "v2",
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#d81e06",
@@ -34,4 +34,5 @@
       "selectedIconPath": "images/mine2.png"
     }]
   }
+  
 }

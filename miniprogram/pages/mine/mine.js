@@ -1,38 +1,54 @@
 
+
+
+
+
 // pages/mine/mine.js
 Page({
-  data: {
-    inputShowed: false,
-    inputVal: ""
-  },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
-
-  /**
+ /**
    * 页面的初始数据
    */
-  data: {
+ 
+data: {
+  
+},
+   
 
+  //swiper切换时会调用
+  pagechange: function (e) {
+    if ("touch" === e.detail.source) {
+      let currentPageIndex = this.data.currentIndex
+      currentPageIndex = (currentPageIndex + 1) % 3
+      this.setData({
+        currentIndex: currentPageIndex
+      })
+    }
   },
+  //用户点击tab时调用
+  titleClick: function (e) {
+    let currentPageIndex =
+      this.setData({
+        //拿到当前索引并动态改变
+        currentIndex: e.currentTarget.dataset.idx
+      })
+  },
+
+
+
+  bindShowMsg() {
+      this.setData({
+        select: !this.data.select
+      })
+    },
+    mySelect(e) {
+      var name = e.currentTarget.dataset.name
+    this.setData({
+        tihuoWay: name,
+        select: false
+      })
+    },
+
+ 
 
   /**
    * 生命周期函数--监听页面加载

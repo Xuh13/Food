@@ -44,95 +44,74 @@ Page({
     this.setData({
       current: e.detail.current
     })
-    nowDate: ''
   },
 
-  search: function(value) {
+  search: function (value) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve([{
-          text: '搜索结果',
-          value: 1
-        }, {
-          text: '搜索结果2',
-          value: 2
-        }])
+        resolve([{ text: '搜索结果', value: 1 }, { text: '搜索结果2', value: 2 }])
       }, 200)
     })
   },
-  selectResult: function(e) {
+  selectResult: function (e) {
     console.log('select result', e.detail)
-  },
-
-  CurrentTime: function() {
-    var myDate= new Date();
-    var month = myDate.getMonth() + 1;
-    var day = myDate.getDate();
-    return month + "月" + day + "日";
-  },
-
-  goToShareMine:function(){
-    wx.navigateTo({
-      url: '../share/share',
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.setData({
-      search: this.search.bind(this),
-      nowDate: this.CurrentTime(),
+      search: this.search.bind(this)
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

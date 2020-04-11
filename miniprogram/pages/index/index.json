@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "主页",
   "usingComponents": {
-    "mp-searchbar": "../weui-miniprogram/searchbar/searchbar",
-    "van-button": "@vant/weapp/button"
+    "mp-searchbar": "../weui-miniprogram/searchbar/searchbar"
   }
 }

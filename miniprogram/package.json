@@ -8,8 +8,5 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {},
-  "dependencies": {
-    "@vant/weapp": "^1.1.0"
-  }
+  "devDependencies": {}
 }
