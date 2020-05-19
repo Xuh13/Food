@@ -3,13 +3,14 @@
     <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
   </view>
 </view>
-<view class="search_list_box" wx:for="{{box_list}}" wx:for-item="aaa"> 
-  <image src="{{aaa.src}}" class="search_list_img"></image>
+<view class="search_list_box" wx:for="{{test}}" wx:for-item="aaa"> 
+  <image src="{{aaa.Cover}}" class="search_list_img"></image>
   <view class="search_list_box_txt">
-    <text class="search_list_box_name">{{aaa.name}}</text>
-    <text class="search_list_box_synopsis">{{aaa.txt}}</text>
+    <text class="search_list_box_name">{{aaa.Title}}</text>
+    <text class="search_list_box_synopsis">{{aaa.Introduction}}</text>
     <text class="search_list_box_tag">
-      <text wx:for="{{aaa.tags}}" wx:for-item="bbb">#{{bbb}}</text>
+      <text wx:for="{{aaa.Recipe_Tags}}" wx:for-item="bbb">#{{bbb}}</text>
     </text>
   </view>
 </view>
+<button bindtap="qqq">q</button>

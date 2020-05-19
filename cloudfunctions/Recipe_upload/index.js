@@ -1,0 +1,45 @@
+// 云函数入口文件
+const cloud = require('wx-server-sdk')
+cloud.init()
+const db = cloud.database()
+// 云函数入口函数
+exports.main = async(event, context) => {
+  var title = event.Title
+  var introduction = event.Introduction
+  var cover = event.Cover
+  var number = event.Number
+  var ingredients = event.Ingredients
+  var methods = event.Methods
+  var difficulty = event.Difficulty
+  var story = event.Story
+  var recipe_Tags = event.Recipe_Tags
+  var date = new Date()
+  var cover_name = event.Cover_name
+  var methods_name= event.Methods_name
+  for(let i = 0 ;i<methods.length;i++){
+    methods[i].Method_img =methods_name[i]
+  }
+
+  return await db.collection('Recipes').add({
+    // data 字段表示需新增的 JSON 数据
+    data: {
+      Title: title,
+      Introduction: introduction,
+      Cover: cover_name,
+      Number:number,
+      Ingredients: ingredients,
+      Methods: methods,
+      Difficulty: difficulty,
+      Story: story,
+      Recipe_Tags: recipe_Tags,
+      Recipe_id:1,
+      Recipe_time: date
+    },
+    success: function(res) {
+      // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+    }
+  })
+  return {
+    event
+  }
+}

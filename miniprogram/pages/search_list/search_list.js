@@ -41,23 +41,42 @@ Page({
       name: "砂锅白菜炖豆腐",
       txt: "白菜最家常的做法就是大白菜和豆腐一起炖烧了，做法简单却是营养滋补",
       tags: ["家常菜","冬季食谱"]
-    }]
+    }],
+    test:[]
   },
 
+  qqq(){
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    this.setData({
-      search: this.search.bind(this)
+  onLoad: function (options) {
+    let that = this;
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'search_list_in',
+      // 传给云函数的参数
+      data: {
+        id: options.id
+      },
+      success(res) {
+        console.log(res)
+        that.setData({
+          test: res.result.data
+        })
+      },
+      fail: console.error
     })
+    search: this.search.bind(this)
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**

@@ -24,4 +24,5 @@ page{
   padding-left: 30rpx;
   padding-top: 40rpx;
   box-sizing: border-box;
+  white-space: pre-wrap;
 }

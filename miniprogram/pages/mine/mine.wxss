@@ -1,6 +1,9 @@
 .page{
 margin-right:15rpx;
 margin-left:15rpx;
+margin-right:20rpx;
+margin-left:20rpx;
+margin-top:35rpx;
 }
 .page__hd{
 margin-top:50rpx;
@@ -26,6 +29,7 @@ padding-bottom: 20rpx;
 /* background: #e5a0a0; */
 font-size:36rpx;
 font-family:"Times New Roman",Georgia,Serif;
+font-family:"STKaiti",Georgia,Serif;
 font-weight:bold;
 }
 
@@ -34,6 +38,7 @@ font-weight:bold;
 background: rgb(218, 221, 223);
 font-weight:normal;
 margin-left:-110rpx;
+font-family:"STKaiti",Georgia,Serif;
 }
 .two{
   position: relative;
@@ -110,11 +115,20 @@ font-family:"Times New Roman",Georgia,Serif;
 .max{
   display: flex;
   padding-top: 30rpx;
+  height: 110rpx;
+background: rgb(246, 246, 246);
+font-family:"STKaiti",Georgia,Serif;
+font-size: 35rpx;
+}
+.max{
+  display: flex;
+  padding-top: 50rpx;
 }
 .aa{
   position: relative;
   width: 180rpx;
   text-align: center;
+  font-family:"STKaiti",Georgia,Serif;
 
 }
 .shu{
@@ -128,6 +142,10 @@ font-family:"Times New Roman",Georgia,Serif;
   top: 57.5%;
   left: 9%;
 }
+.ji-img{
+  width: 32rpx;
+  height: 32rpx;
+}
 .aa:hover{
   background: rgb(228, 227, 227);
 }
@@ -140,6 +158,7 @@ font-family:"Times New Roman",Georgia,Serif;
 
 .ticket-container{
     padding-top: 30rpx;
+    padding-top: 50rpx;
 
 }
 
@@ -158,6 +177,7 @@ font-family:"Times New Roman",Georgia,Serif;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-family:"STKaiti",Georgia,Serif;
 }
  
 .title-sel {

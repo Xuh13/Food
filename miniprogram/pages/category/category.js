@@ -46,13 +46,37 @@ Page({
     }, ]
   },
 
+  jump:function(event){
+    wx.navigateTo({
+      url: '/pages/search_list/search_list?id=' + event.currentTarget.id,
+    })
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.setData({
-      search: this.search.bind(this)
+    let test = 0;
+    let that = this;
+    wx.cloud.init()
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'category_in',
+      // 传给云函数的参数
+      data: {
+        id: test
+      },
+      success(res) {
+        that.setData({
+          box_list: res.result.data
+        })
+      },
+      fail: console.error
     })
+
+    search: this.search.bind(this)
+    
   },
 
   /**

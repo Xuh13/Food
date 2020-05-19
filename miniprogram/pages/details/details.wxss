@@ -1,1 +1,104 @@
 /* pages/details/details.wxss */
+#p1,#p2{
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+}
+
+.title_input{
+  width: 650rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #BBBBBB;
+  font-size: 40rpx;
+}
+
+.next_step{
+  margin-top: 60rpx;
+  display: inline-block;
+  float: right;
+  border: 2rpx solid #BBBBBB;
+  border-radius: 20rpx;
+  width: 300rpx !important;
+  height: 60rpx;
+  color: #000000 !important ;
+}
+
+.last_step{
+  margin-top: 60rpx;
+  display: inline-block;
+  float: left;
+  border: 2rpx solid #BBBBBB;
+  border-radius: 20rpx;
+  width: 300rpx !important;
+  height: 60rpx;
+  color: #000000 !important ;
+}
+
+.end{
+  margin-top: 60rpx;
+  margin-right: 50rpx !important;
+  display: inline-block;
+  float: right;
+  border: 2rpx solid #BBBBBB;
+  border-radius: 20rpx;
+  width: 300rpx !important;
+  height: 60rpx;
+  color: #000000 !important ;
+}
+
+.title{
+  width: 650rpx;
+  height: 100rpx;
+  font-size: 54rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #BBBBBB;
+}
+
+.cover{
+  margin-top:50rpx;
+  width: 650rpx;
+  height: 650rpx;
+  text-align: center;
+  line-height: 650rpx;
+  background-color: #F0F0F0;
+}
+
+.cover_txt{
+  width: 650rpx;
+  height: 650rpx;
+  position: absolute;
+}
+
+.instruction{
+  margin-top:25rpx;
+  width: 650rpx;
+  height: 250rpx;
+  text-align: center;
+  line-height: 250rpx;
+  border: 2rpx solid #F0F0F0;
+}
+
+.Ingredients{
+  width:325rpx;
+  display:inline-block;
+}
+
+.cancel{
+  width: 200rpx !important;
+  height: 50rpx;
+  display: inline-block;
+  border: 2rpx solid #000000;
+  float: left;
+  margin-left: 80rpx !important;
+}
+
+.save{
+  width: 200rpx !important;
+  height: 50rpx;
+  display: inline-block;
+  border: 2rpx solid #000000;
+  float: right;
+  margin-right: 80rpx !important;
+}

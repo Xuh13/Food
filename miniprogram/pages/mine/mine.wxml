@@ -72,6 +72,7 @@
        <view class='ji aa'>
           <view class='shu'>439</view>
           <view><image class='aa-img' src="../../images/ji.png"></image>积分</view>
+          <view><image class='aa-img ji-img' src="../../images/ji.png"></image>积分</view>
         </view>
       </view>
     </view>

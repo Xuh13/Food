@@ -1,2 +1,74 @@
-<!--pages/details/details.wxml-->
-<text>pages/details/details.wxml</text>
+<view id="p1" style="{{show1}}">
+  <input class="title_input" placeholder="给你的食谱起个标题吧" value="{{Title}}" bindinput="inputit"></input>
+  <view>提示</view>
+  <view>一个有趣的标题是吸引关注的第一步</view>
+
+    <view class="page__bd">
+        <view class="weui-btn-area">
+            <button class="next_step" type="default" bindtap="tapOneDialogButton">下一步</button>
+        </view>
+    </view>
+    <mp-dialog title="提示" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>标题不能为空</view>
+    </mp-dialog>
+</view>
+
+<view id="p2" style="{{show2}}">
+  <!-- 标题 -->
+  <view class="title">{{Title}}</view>
+  <!-- 封面 -->
+  <view class="cover" bindtap="chooseImage">
+    <view style="{{showTXT}}" class="cover_txt">+菜谱封面</view>
+    <image src="{{Cover}}" style="{{showCover}}width: 650rpx;height: 650rpx;"></image>
+  </view>
+  <!-- 简介 -->
+  <input placeholder="简单介绍一下你的食谱吧" placeholder-style="text-align:center;" class="instruction" bindinput="inputInstruction"></input>
+  <!-- 用料表 -->
+  <view id="aaa">
+    <view>用料</view>
+    <block wx:for="{{Ingredients}}" wx:key="index" style="border-bottom:2rpx solid #F0F0F0;">
+      <input placeholder="食材:如鸡蛋" class="Ingredients" value="{{item.Ingredients_name}}" bindinput="inputIngredients_name" id="{{index}}"></input>
+      <input placeholder="用量:如1个" class="Ingredients" value="{{item.Ingredients_dosage}}" bindinput="inputIngredients_dosage" id="{{index}}"></input>
+      <view style="{{delIng_TXT}}" bindtap="deleteIngredient" id="{{index}}">0</view>
+    </block>
+    <view bindtap="addIngredient" style="display:inline-block;float:left;">再增加一行</view>
+    <view bindtap="deleteButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delIng_tag}}</view>
+  </view>
+  <!-- 做法 -->
+  <view>
+    <view>做法</view>
+    <block wx:for="{{Methods}}" wx:key="index">
+      <view>步骤{{index+1}}</view>
+      <view class="cover" bindtap="methodImage" id="{{index}}">
+        <view style="{{methodTXT[index]}}" class="cover_txt">+步骤图</view>
+        <image src="{{Methods[index].Method_img}}" style="{{methodimg[index]}}width: 650rpx;height: 650rpx;"></image>
+      </view>
+      <input placeholder="添加步骤说明" bindinput="inputMethod" id="{{index}}" value="{{item.Method_txt}}"></input>
+      <view style="{{delMethod_TXT}}" bindtap="deleteMethod" id="{{index}}">0</view>
+    </block>
+    <view bindtap="addMethod" style="display:inline-block;float:left;">再增加一行</view>
+    <view bindtap="delMethodButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delMethod_tag}}</view>
+  </view>
+  <!-- 难点 -->
+  <view style="margin-top:100rpx;">
+    <view style="width:650rpx;">诀窍/难点</view>
+    <input placeholder="难点" bindinput="inputDifficult" value="{{Difficulty}}"></input>
+  </view>
+  <!-- 故事 -->
+  <view style="margin-top:100rpx;">
+    <view style="width:650rpx;">食谱故事</view>
+    <input placeholder="讲讲食谱背后的故事吧" bindinput="inputStory" value="{{Story}}"></input>
+  </view>
+  <!-- 标签 -->
+  <view style="border-bottom:2rpx solid #BBBBBB;overflow:auto;margin-right:50rpx;" bindtap="classfy">
+    <view style="float:left">推荐至分类</view>
+    <view style="float:right;">></view>
+  </view>
+  <button class="last_step" bindtap="back">上一步</button>
+  <button class="end" bindtap="end">发布</button>
+</view>
+
+<view id="p3" style="{{show3}}">
+  <button class="cancel" bindtap="cancel">取消</button>
+  <button class="save" bindtap="save">保存</button>
+</view>
