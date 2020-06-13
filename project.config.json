@@ -49,26 +49,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
+					"id": 0,
+					"name": "pages/flist/flist",
+					"pathName": "pages/flist/flist",
+					"query": "food_id=5b540668-7d31-431f-b530-688e0d17ce5b",
+					"scene": null
 				},
 				{
 					"id": 1,
-					"name": "pages/category/category",
-					"pathName": "pages/category/category",
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/details/details",
-					"pathName": "pages/details/details",
-					"query": "",
+					"id": 2,
+					"name": "pages/search_list/search_list",
+					"pathName": "pages/search_list/search_list",
+					"query": "id=螃蟹&type=1",
 					"scene": null
 				}
 			]

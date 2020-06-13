@@ -1,0 +1,34 @@
+<!-- <view class="page">
+    <view class="page__bd">
+        <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+</view> -->
+<view class="search-main">
+
+  <view class="s-left">
+   <block wx:for="{{navList}}" wx:key="index">
+        <text class="type-nav {{curNav == item.id ? 'selected' : ''}}" bindtap="selectNav" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</text>
+    </block>
+  </view>
+
+  <view class="s-right">
+    <block wx:for="{{dishesList[curIndex]}}" wx:key="index">
+        <view class="dish" catchtap="selectDish">
+            <view class="flex-item">
+                <image src='/images/ms.png' class="img"></image>
+                <text class="r-title">{{item.name}}</text>
+                <!-- <button bindtap="gotoComment" data-movieid="{{item.id}}" class="movie-comment">评价</button> -->
+                <button class="r-button" bindtap="gotoComment" data-food_id="{{item.food_id}}">前往</button>
+            </view>
+        </view>
+    </block>
+
+  </view>
+
+
+
+
+
+
+
+</view>

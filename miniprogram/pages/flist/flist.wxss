@@ -1,0 +1,75 @@
+/* pages/flist/flist.wxss */
+.tit-top{
+ font-weight: bold;
+  text-align: center;
+}
+.tit{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.my-name{
+  /* width: 100%; */
+  height: 70px;
+  border: 2px dashed #eee;
+  display: flex;
+  /* margin: 20px; */
+}
+.myimg{
+  width: 150rpx;
+  height: 150rpx;
+  /* display: inline-block; */
+  overflow: hidden;
+  border-radius: 50%;
+  flex-direction: row;
+  margin-left: 40rpx;
+  /* transform: translate(-50%,60rpx); */
+}
+.myname{
+  font-size: 36rpx;
+  color: #000;
+  line-height: 70px;
+}
+.mysc{
+  width: 30px;
+  height: 30px;
+  /* line-height: 70px; */
+  margin-left: 100rpx;
+  margin-top: 15px;
+  margin-right: 30px;
+  /* flex: 1; */
+}
+.cl{
+  width: 90%;
+  border: 2px solid #eee;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+.bz{
+  width: 80%;
+  height: 320px;
+  border: 2px solid #eee;
+  margin-left: 10px;
+}
+.bz image{
+  width: 80%;
+  margin-left: 3px;
+}
+.gs{
+  width: 90%;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border: 2px solid #eee;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+.talk{
+  width: 100%;
+  height: 50px;
+  background: #eee;
+  position: fixed;
+  bottom: 0;
+}

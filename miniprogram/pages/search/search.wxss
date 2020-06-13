@@ -1,0 +1,70 @@
+/* pages/search/search.wxss */
+.search-main{
+  height: 400px;
+  /* background: #ff0000; */
+  display: flex;
+   /* flex-direction:  column ; */
+  font-family: cursive;
+}
+.s-left{
+   width: 100px;
+   height: 400px;
+   /* background: #0000ff; */
+   border-right: 1px solid #e6e6e6;
+    font-size: .85rem;
+    background: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+}
+.s-right{
+  flex:1;
+  height: 400px;
+  /* background: #00ff00; */
+}
+/* 未选中样式 */
+.type-nav{  
+    position: relative; 
+    height: 20px;
+    padding:0.7rem 0.3rem; 
+    text-align: center; 
+    border-bottom: 1px solid #e6e6e6; 
+    z-index: 10; 
+    line-height: 20px;
+}
+/* 选中样式 */
+.type-nav.selected{ 
+    margin-right: -1px; 
+    padding-left:-1px; 
+    color: #333;
+    background-color: #fff;
+}
+.dish{
+    margin-left: 1rem;
+    padding: 1rem;
+    /* border-bottom: 1px solid #ddd;  */
+}
+.flex-item{
+  display: flex;
+}
+.img{
+  width: 35px;
+  height: 20px;
+}
+.r-title{
+  flex: 0.4;
+}
+/* .answer-button{
+   display: block;
+  font-size: 2vh;
+  height: 20px;
+  width: 75px;
+} */
+.r-button{
+  height: 60rpx;
+  /* width: 20px; */
+  background: #3385ff;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  /* margin-top: 15rpx; */
+}

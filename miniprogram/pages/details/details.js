@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    array: ['1', '2', '3', '4'],
+    index: 0,
     files: [{
       url: 'http://mmbiz.qpic.cn/mmbiz_png/VUIF3v9blLsicfV8ysC76e9fZzWgy8YJ2bQO58p43Lib8ncGXmuyibLY7O3hia8sWv25KCibQb7MbJW3Q7xibNzfRN7A/0',
     }, {
-      loading: true
+      loading: true 
     }, {
       error: true
     }],
@@ -51,8 +53,9 @@ Page({
     Difficulty: '',
     Story: '',
     Recipe_Tags: [],
-    images: []
-    
+    images: [],
+    Methods_name:[],
+    Cover_name:''
   },
 
   chooseImage(e) {
@@ -80,13 +83,13 @@ Page({
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
       success: res => {
         var tempFilePaths = res.tempFilePaths
+        console.log(tempFilePaths)
         let array = [...this.data.Methods]
         let array1 = [...this.data.methodTXT]
         let array2 = [...this.data.methodimg]
         array[e.currentTarget.id].Method_img = tempFilePaths[0]
         array1[e.currentTarget.id] = 'display:none;'
         array2[e.currentTarget.id] = 'display:block;'
-
         this.setData({
           methodTXT: array1,
           methodimg: array2,
@@ -353,6 +356,13 @@ Page({
     
   },
 
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+
   classfy(){
     this.setData({
       show2:'display:none',
@@ -374,86 +384,179 @@ Page({
       show2: 'display:block'
     })
   },
-
-  end(){
-    let that = this.data
-    console.log(that)
-    var util = require('../../Utils/uuid/uuid.js')
-    let cover_name ='cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/' +util.wxuuid() + '.png';
-
-
-    wx.getFileSystemManager().readFile({
-      filePath: that.Cover, //选择图片返回的相对路径
-      encoding: 'base64', //编码格式
-      success: res => { //成功的回调
+  uploadCover(){
+    let x = this;
+    let that = this.data;
+    return new Promise(resolve=>{
+      wx.cloud.uploadFile({
+        cloudPath: new Date().getTime() + '.png',
+        filePath: that.Cover,
+        success(res) {
+          x.setData({
+            Cover: res.fileID
+          })
+          return resolve()
+        }
+      })
+    }) 
+  },
+  uploadMethod(i){
+    let that = this.data;
+    return new Promise(resolve=>{
+      wx.cloud.uploadFile({
+        cloudPath: (new Date().getTime() + i + 1) + '.png',
+        filePath: that.Methods[i].Method_img,
+        success(res) {
+          let mn = that.Methods_name
+          mn.push(res.fileID)
+          x.setData({
+            Methods_name: mn
+          })
+          console.log("methods")
+          return resolve()
+        }
+      })
+    })
+    
+  },
+  uploadMethods(i){
+    let that = this
+    let x = this.data
+    console.log(this.data.Cover)
+    console.log(i)
+    console.log(this.data.Methods.length)
+    this.uploadMethod(i).then(result => {
+      console.log(result)
+      console.log(i)
+      console.log(this.data.Methods.length)
+      if (i < that.Methods.length){
+        that.uploadMethods(i + 1)
+      }else{
         wx.cloud.callFunction({
           // 云函数名称
-          name: 'Recipe_img_upload',
+          name: 'Recipe_upload',
           // 传给云函数的参数
           data: {
-            url: cover_name,
-            f_url: res.data
+            Title: that.data.Title,
+            Introduction: that.data.Introduction,
+            Cover: that.data.Cover,
+            Cover_name: that.data.Cover_name,
+            Number: that.data.Number,
+            Ingredients: that.data.Ingredients,
+            Methods: that.data.Methods,
+            Methods_name: that.data.Methods_name,
+            Difficulty: that.data.Difficulty,
+            Story: that.data.Story,
+            Recipe_Tags: that.data.Recipe_Tags,
+            Number:that.data.array[that.data.index]
           },
           success(res) {
-            console.log('success')
+            console.log("success")
+            console.log(res)
           },
           fail: console.error
         })
       }
     })
+    
+  },
+up(){
+     let x = this;
+     let that = this.data;
+     let wewe;
+     let i =0;
+     this.uploadCover().then(result=>{
+       this.uploadMethods(0);
+     })
+     
+   
+    
+  },
 
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'Recipe_img_upload',
-      // 传给云函数的参数
-      data: {
-        url:cover_name,
-        f_url:that.cover
-      },
-      success(res) {
-        console.log('success')
-      },
-      fail: console.error
-    })
+  end(){
+    let that = this
+    let x = this.data
+    let c = false;
 
-    let methods_name = [];
-    for (let i = 0; i < that.Methods.length;i++){
-      methods_name.push('Recipes/' + util.wxuuid() + '.png')
+    let promiseArr = [];
+    promiseArr.push(new Promise((resolve,reject)=>{
+      wx.cloud.uploadFile({
+        cloudPath: new Date().getTime() + '.png',
+        filePath: x.Cover,
+        success(res) {
+          that.setData({
+            Cover: res.fileID
+          })
+          resolve()
+        }
+      })
+    }))
+    for (let i = 0; i < this.data.Methods.length; i++) {
+      let that = this
+      let x = this.data
+      promiseArr.push(new Promise((resolve, reject) => {
+        wx.cloud.uploadFile({
+          cloudPath: (new Date().getTime() + i + 1) + '.png',
+          filePath: x.Methods[i].Method_img,
+          success(res) {
+            let mn = x.Methods_name
+            mn.push(res.fileID)
+            that.setData({
+              Methods_name: mn
+            })
+            resolve()
+          }
+        })
+      }))
+    }
+    
+
+    var s = [];
+    var hexDigits = "0123456789abcdef";
+    for (var i = 0; i < 36; i++) {
+      s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    s[8] = s[13] = s[18] = s[23] = "-";
+
+    var uuid = s.join("");
+    
+
+    Promise.all(promiseArr).then(res => {//等数组都做完后做then方法
+      console.log("图片上传完成后再执行")
+      let that = this
+      console.log("lai")
+      let id = new Date().getTime()
       wx.cloud.callFunction({
         // 云函数名称
-        name: 'Recipe_img_upload',
+        name: 'Recipe_upload',
         // 传给云函数的参数
         data: {
-          url: methods_name[i],
-          f_url: that.Methods[i].Method_img
+          Recipe_id: uuid,
+          Title: that.data.Title,
+          Introduction: that.data.Introduction,
+          Cover: that.data.Cover,
+          Cover_name: that.data.Cover_name,
+          Number: that.data.Number,
+          Ingredients: that.data.Ingredients,
+          Methods: that.data.Methods,
+          Methods_name: that.data.Methods_name,
+          Difficulty: that.data.Difficulty,
+          Story: that.data.Story,
+          Recipe_Tags: that.data.Recipe_Tags
         },
         success(res) {
-          console.log('success')
+          wx.navigateTo({
+            url: '../../pages/flist/flist?food_id=' + uuid
+          })
         },
         fail: console.error
       })
-    }
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'Recipe_upload',
-      // 传给云函数的参数
-      data: {
-        Title: that.Title,
-        Introduction: that.Introduction,
-        Cover: that.Cover,
-        Cover_name:cover_name,
-        Number: that.Number,
-        Ingredients: that.Ingredients,
-        Methods: that.Methods,
-        Methods_name :methods_name,
-        Difficulty: that.Difficulty,
-        Story: that.Story,
-        Recipe_Tags: that.Recipe_Tags
-      },
-      success(res) {
-        console.log('success')
-      },
-      fail: console.error
     })
+    
+   
+    
+    
   }
-})
+  })

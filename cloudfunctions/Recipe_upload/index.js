@@ -16,30 +16,34 @@ exports.main = async(event, context) => {
   var date = new Date()
   var cover_name = event.Cover_name
   var methods_name= event.Methods_name
+  var recipe_id = event.Recipe_id
+  var num = event.Number
   for(let i = 0 ;i<methods.length;i++){
     methods[i].Method_img =methods_name[i]
   }
-
+  var id = event.userInfo.openId
   return await db.collection('Recipes').add({
     // data 字段表示需新增的 JSON 数据
     data: {
       Title: title,
       Introduction: introduction,
-      Cover: cover_name,
+      Cover: cover,
       Number:number,
       Ingredients: ingredients,
       Methods: methods,
       Difficulty: difficulty,
       Story: story,
       Recipe_Tags: recipe_Tags,
-      Recipe_id:1,
-      Recipe_time: date
+      Recipe_id:recipe_id,
+      Recipe_time: date,
+      Recipe_Up:id,
+      Number:num
     },
     success: function(res) {
-      // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+      return cover_name
     }
   })
   return {
-    event
+    cover_name
   }
 }

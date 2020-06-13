@@ -10,7 +10,7 @@
     </view>
     <mp-dialog title="提示" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
         <view>标题不能为空</view>
-    </mp-dialog>
+    </mp-dialog> 
 </view>
 
 <view id="p2" style="{{show2}}">
@@ -34,6 +34,14 @@
     <view bindtap="addIngredient" style="display:inline-block;float:left;">再增加一行</view>
     <view bindtap="deleteButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delIng_tag}}</view>
   </view>
+  <view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
   <!-- 做法 -->
   <view>
     <view>做法</view>

@@ -1,0 +1,42 @@
+<!--pages/flist/flist.wxml-->
+<view class="tit-top">分类</view>
+<image src="{{test[0].Cover}}"></image>
+<view class="tit">{{test[0].Title}}</view>
+<view class="my-name">
+  <!-- <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取用户</button> -->
+  <view class="myimg">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="myname"></open-data>
+  <image src='{{dz}}' class="mysc" bindtap="gotosc"></image>
+  <!-- <van-rate
+    value="{{ value }}"
+    count="{{ 1 }}"
+    bind:change="onChange"
+  /> -->
+</view>
+<view>{{test[0].Introduction}}</view>
+<view class="cl">
+  <view>材料：</view>
+  <view wx:for="{{test[0].Ingredients}}" wx:for-index="index" wx:for-item="Ing">
+    <text>{{Ing.Ingredients_name}}:</text>
+    <text>{{Ing.Ingredients_dosage}}</text>
+  </view>
+</view>
+<view class="bz" wx:for="{{test[0].Methods}}" wx:for-index="index" wx:for-item="method">
+  <view>第{{index+1}}步</view>
+  <image src="{{method.Method_img}}" class="bz-img"></image>
+  <view>{{method.Method_txt}}</view>
+</view>
+<view class="gs">
+  <view>图谱故事</view>
+  <view>{{test[0].Story}}</view>
+</view>
+<view class="gs">
+  <view>难点</view>
+  <view>{{test[0].Difficulty}}</view>
+</view>
+<view class="talk" wx:for="{{content}}" wx:for-item="a" wx:for-index="i">
+  <view>{{a.Comment_txt}}</view>
+</view>
+

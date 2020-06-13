@@ -1,6 +1,4 @@
 .page{
-margin-right:15rpx;
-margin-left:15rpx;
 margin-right:20rpx;
 margin-left:20rpx;
 margin-top:35rpx;
@@ -16,19 +14,19 @@ padding-left: 10rpx;
 }
 
 .headpor{
-height: 120rpx;
-width: 120rpx;
-border-radius:60px;
+height: 125rpx;
+width: 125rpx;
+border-radius:50%;
+overflow:hidden;
 }
 .name{
 height: 50rpx;
 width: 375rpx;
-margin-left:-110rpx;
+margin-left:-95rpx;
 padding-top: 5rpx;
 padding-bottom: 20rpx;
 /* background: #e5a0a0; */
 font-size:36rpx;
-font-family:"Times New Roman",Georgia,Serif;
 font-family:"STKaiti",Georgia,Serif;
 font-weight:bold;
 }
@@ -37,7 +35,7 @@ font-weight:bold;
 .data{
 background: rgb(218, 221, 223);
 font-weight:normal;
-margin-left:-110rpx;
+margin-left:-95rpx;
 font-family:"STKaiti",Georgia,Serif;
 }
 .two{
@@ -108,13 +106,6 @@ border-bottom: 4rpx solid rgb(219, 215, 215);
   right: 10rpx;
 }
 .weui-textarea{
-  height: 90rpx;
-background: rgb(246, 246, 246);
-font-family:"Times New Roman",Georgia,Serif;
-}
-.max{
-  display: flex;
-  padding-top: 30rpx;
   height: 110rpx;
 background: rgb(246, 246, 246);
 font-family:"STKaiti",Georgia,Serif;
@@ -157,7 +148,6 @@ font-size: 35rpx;
 
 
 .ticket-container{
-    padding-top: 30rpx;
     padding-top: 50rpx;
 
 }
@@ -210,7 +200,3 @@ font-size: 35rpx;
   position: relative;
   margin-top: 10rpx;
 }
- 
-
- 
-

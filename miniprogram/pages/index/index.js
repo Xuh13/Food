@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    nowDate: '',
     inputShowed: false,
     inputVal: "",
     autoplay: true,
@@ -16,7 +17,9 @@ Page({
       'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜1.jpg',
       'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/timg.jpg',
       'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/timg (2).jpg'
-    ]
+    ],
+    active:0,
+    Search:''
   },
 
   intervalChange: function (e) {//自动切换时间间隔
@@ -44,74 +47,101 @@ Page({
     this.setData({
       current: e.detail.current
     })
+    
   },
 
-  search: function (value) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([{ text: '搜索结果', value: 1 }, { text: '搜索结果2', value: 2 }])
-      }, 200)
+ 
+  selectResult: function(e) {
+    console.log('select result', e.detail)
+  },
+
+  CurrentTime: function() {
+    var myDate= new Date();
+    var month = myDate.getMonth() + 1;
+    var day = myDate.getDate();
+    return month + "月" + day + "日";
+  },
+
+  goToShareMine:function(){
+    wx.navigateTo({
+      url: '../details/details',
     })
   },
-  selectResult: function (e) {
-    console.log('select result', e.detail)
+  
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none'
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
-      search: this.search.bind(this)
+      search: this.search.bind(this),
+      nowDate: this.CurrentTime(),
+    })
+  },
+  search(e){
+    console.log(this.data.Search)
+    wx.navigateTo({
+      url: '../search_list/search_list?id=' + this.data.Search+'&type=1',
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
-  }
+  },
+  inputSearch(e) {
+    this.setData({
+      Search: e.detail.value
+    })
+  },
 })

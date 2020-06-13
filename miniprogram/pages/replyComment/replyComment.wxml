@@ -1,0 +1,6 @@
+<!--pages/replyComment/replyComment.wxml-->
+<text>pages/replyComment/replyComment.wxml</text>
+<input class="writeComment" placeholder="🍔说说你的感受吧!" bindblur="onCommentChange"></input>
+<view class="container1">
+  <van-button type="primary" class="publish" bindtap="submit">发表</van-button>
+</view>

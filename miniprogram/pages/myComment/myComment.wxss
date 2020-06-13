@@ -1,0 +1,21 @@
+/* pages/myComment/myComment.wxss */
+.writeComment{
+  height: 300rpx;
+  border-radius: 20rpx;
+  background: #dddcdc;
+}
+
+.container1{
+  position: relative;
+}
+
+.publish{
+  position:absolute;
+  right:5rpx;
+}
+
+.commentImg{
+  width:200rpx;
+  height:200rpx;
+  margin-right:20rpx;
+}

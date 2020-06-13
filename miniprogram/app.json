@@ -4,7 +4,15 @@
     "pages/category/category",
     "pages/search_list/search_list",
     "pages/details/details",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/comment/comment",
+    "pages/myComment/myComment",
+    "pages/replyComment/replyComment",
+    "pages/share/share",
+    "pages/search/search",
+    "pages/flist/flist",
+    "pages/login/login",
+    "pages/test/test"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -24,7 +32,7 @@
       "iconPath": "images/main1.png",
       "selectedIconPath": "images/main2.png"
     },{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/search/search",
       "text": "搜索",
       "iconPath": "images/search1.png",
       "selectedIconPath": "images/search2.png"

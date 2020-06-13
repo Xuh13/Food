@@ -1,4 +1,16 @@
 /* miniprogram/pages/index/index.wxss */
+.Search{
+  width: 750rpx !important;
+  height: 100rpx;
+}
+.S_input{
+  width: 746rpx !important;
+  height: 100rpx;
+  line-height: 100rpx;
+   text-align: center;
+   border: 2rpx solid #ccc;
+}
+
 #swiper-main{
   margin: 0;
   margin-left: 25px;
@@ -6,4 +18,120 @@
   padding: 0;
   width: 100%;
   height: 300px;
+} 
+
+swiper{
+  height: 400rpx;
+  width:100%;
 }
+
+swiper-item {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.NowDate {
+  border: 1rpx solid #ccc;
+  font-size: 60rpx;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  flex: 0.5;
+}
+
+.mid-Content {
+  position: relative;
+  display: flex;
+}
+
+.uploadFile {
+  border: 1rpx solid #ccc;
+  font-size: 40rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.dishName {
+  border: 1rpx solid #ccc;
+  font-size: 40rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* .home-Navbar{
+  flex:1;
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+} */
+
+.rankingToday .rankingWeek .mostClick {
+  flex: 1;
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.dishContent{
+  display: flex;
+  border: 1rpx solid #ccc;
+  position: relative;
+}
+
+.dishContainer{
+  background-color: #ccc;
+  border-radius: 100%;
+  margin-left: 60rpx;
+  height: 100rpx;
+  width: 100rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.detailImage { 
+  height: 50rpx;
+  width: 80rpx;
+  text-align: center;
+}
+
+.detailDish{
+  flex: 0.5;
+  font-size: 40rpx;
+  text-align: center;
+  margin-left: 50rpx;
+  height: 100rpx;       
+  line-height: 100rpx;
+  border-left:1rpx solid #ccc;
+}
+
+.starButton{
+  width: 100rpx;
+  height: 100rpx;
+  position:absolute;
+  top: 6rpx;
+  right:6rpx;
+  border-radius: 100%;
+}
+

@@ -4,12 +4,12 @@
     <view class='weui-flex'>
       <view class='weui-flex__item'>
         <view class='HeadPortrait'>
-          <image class='headpor' src='../../images/4.png'></image>
+          <view class='headpor'><open-data class='headpor' type="userAvatarUrl" ></open-data></view>
         </view>
       </view>
       <view class='weui-flex__item'>
-        <view class='page__title name'>我还是从前那个少年</view>
-        <button class="data" size="mini" style='font-size: 10pt !important;'>编辑资料</button>
+        <view class='page__title name'><open-data type="userNickName"></open-data></view>
+        <button bindtap="gotoinformation" data-openid="{{item.id}}" class="data" size="mini" style='font-size: 10pt !important;'>编辑资料</button>
         </view>
       <view class='weui-flex__item'>
         <view class='two'>
@@ -42,9 +42,12 @@
   <view class='page__bd max'>
     <view class='weui-flex'>
       <view class='weui-flex__item'>
-        <view class='zan aa'>
+        <view class='zan aa' bindtap="toastShow">
           <view class='shu'>422</view>
           <view><image class='aa-img' src="../../images/zan.png"></image>获赞</view>
+          <toast hidden="{{status}}" duration="2000" bindchange="toastHide">
+        恭喜你获得422个赞
+</toast>
         </view>
       </view>
     </view>
@@ -71,7 +74,6 @@
       <view class='weui-flex__item'>
        <view class='ji aa'>
           <view class='shu'>439</view>
-          <view><image class='aa-img' src="../../images/ji.png"></image>积分</view>
           <view><image class='aa-img ji-img' src="../../images/ji.png"></image>积分</view>
         </view>
       </view>
@@ -110,5 +112,3 @@
 
 
 </view>
-
-

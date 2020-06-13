@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="page-body-info " wx:for="{{content}}" wx:for-item="a" wx:for-index="i">
+    <!-- wx:for="{{content}}" wx:key="index" wx:if={{content.commentType == 0}}-->
+    <open-data type='userAvatarUrl' class="userinfo" mode="cover"></open-data>
+    <view class="infomid">
+      <open-data type="userNickName" class="username"></open-data>
+      <view class="container1">
+        <view class="Comment-time">{{a.Comment_time}}</view>
+        <text class="Comment-content">{{a.Comment_txt}}</text>
+        <image src="../../images/cai1.png" class="commentImg"></image>
+      </view>
+    </view>
+    <van-icon name="chat-o" class="reply" color="#07c160" size="50rpx" bindtap="gotoReplyComment" data-commentId="{{item.id}}" />
+  </view>
+  <view class="container2">
+    <input class="myComment" placeholder-class="place-holder" placeholder="🍕写下你的评论!" bindtap="goTomyComment"></input>
+  </view>
+</view>
+<!-- focus="false" bindinput="voteTitle" -->
