@@ -59,13 +59,13 @@
 }
 .gs{
   width: 90%;
-  height: 80px;
+  /* height: 200rpx; */
   text-align: center;
   line-height: 80px;
-  border: 2px solid #eee;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-bottom: 20px;
+  border: 4rpx solid #eee;
+  margin-top: 40rpx;
+  margin-left: 10rpx;
+  margin-bottom: 40rpx;
 }
 .talk{
   width: 100%;

@@ -2,6 +2,17 @@
 page{
   display: block;
 }
+.Search{
+  width: 750rpx !important;
+  height: 100rpx;
+}
+.S_input{
+  width: 746rpx !important;
+  height: 100rpx;
+  line-height: 100rpx;
+   text-align: center;
+   border: 2rpx solid #ccc;
+}
 .category_box{
   width:371rpx;
   height: 200rpx;

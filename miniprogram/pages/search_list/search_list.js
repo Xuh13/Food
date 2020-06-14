@@ -74,10 +74,17 @@ Page({
           fail: console.error
         })
       })
+      wx.setNavigationBarTitle({
+        title: '收藏夹'
+      })
     }else{
       if (options.type == 1) {
         this.setData({
           Search: options.id
+        })
+      }else if(options.type==2){
+        wx.setNavigationBarTitle({
+          title: '我的食谱'
         })
       }
       wx.cloud.callFunction({

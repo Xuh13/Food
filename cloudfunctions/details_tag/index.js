@@ -6,7 +6,9 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   try {
-    return await db.collection('Tags')
+    return await db.collection('Tags').where({
+      TagClass:0
+    })
     .get({
       success: function (res) {
         return res

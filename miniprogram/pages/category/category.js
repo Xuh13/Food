@@ -19,6 +19,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    Search: '',
     inputShowed: false,
     inputVal: "",
     box_list: [{
@@ -50,7 +51,17 @@ Page({
     })
 
   },
-
+  inputSearch(e) {
+    this.setData({
+      Search: e.detail.value
+    })
+  },
+  search(e) {
+    console.log(this.data.Search)
+    wx.navigateTo({
+      url: '../search_list/search_list?id=' + this.data.Search + '&type=1',
+    })
+  },
   /** 
    * 生命周期函数--监听页面加载
    */
@@ -61,10 +72,6 @@ Page({
     wx.cloud.callFunction({
       // 云函数名称
       name: 'category_in',
-      // 传给云函数的参数
-      data: {
-        id: test
-      },
       success(res) {
         that.setData({
           box_list: res.result.data

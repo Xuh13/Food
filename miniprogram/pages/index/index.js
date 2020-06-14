@@ -19,7 +19,8 @@ Page({
       'cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/timg (2).jpg'
     ],
     active:0,
-    Search:''
+    Search:'',
+    list:[]
   },
 
   intervalChange: function (e) {//自动切换时间间隔
@@ -78,7 +79,57 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  a() {
+    let that = this
+    return new Promise((resolve, reject) => {
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'index_in',
+        // 传给云函数的参数
+        success(res) {
+          
+          let l = []
+          for (let i = 0; i < res.result.data.length; i++) {
+            l.push(res.result.data[i].Recipe_id)
+          }
+          console.log(l)
+          that.setData({
+            list: l
+          })
+          resolve()
+        },
+        fail: console.error
+      })
+    })
+  },
+  jump(e){
+    console.log(e)
+    let u = '../flist/flist?food_id=' + e.currentTarget.dataset.rid;
+    wx.navigateTo({
+      url: u
+    })
+    
+  },
   onLoad: function(options) {
+    let that = this
+    this.a().then(success=>{
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'index',
+        // 传给云函数的参数
+        data:{
+          list:that.data.list
+        },
+        success(res) {
+          console.log(res)
+         
+          that.setData({
+            list: res.result.data
+          })
+        },
+        fail: console.error
+      })
+    })
     this.setData({
       search: this.search.bind(this),
       nowDate: this.CurrentTime(),

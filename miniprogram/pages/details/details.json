@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "食谱编辑",
   "usingComponents": {
     "mp-uploader": "../../weui-miniprogram/uploader/uploader",
     "mp-cells": "../../weui-miniprogram/cells/cells",

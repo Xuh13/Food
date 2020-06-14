@@ -42,8 +42,8 @@ Page({
     Number: 0,
     Ingredients: [{
       Ingredients_id: 0,
-      Ingredients_name: '1',
-      Ingredients_dosage: '1'
+      Ingredients_name: '',
+      Ingredients_dosage: ''
     }],
     Methods: [{
       Method_id: 0,

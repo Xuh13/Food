@@ -29,7 +29,7 @@
     <block wx:for="{{Ingredients}}" wx:key="index" style="border-bottom:2rpx solid #F0F0F0;">
       <input placeholder="食材:如鸡蛋" class="Ingredients" value="{{item.Ingredients_name}}" bindinput="inputIngredients_name" id="{{index}}"></input>
       <input placeholder="用量:如1个" class="Ingredients" value="{{item.Ingredients_dosage}}" bindinput="inputIngredients_dosage" id="{{index}}"></input>
-      <view style="{{delIng_TXT}}" bindtap="deleteIngredient" id="{{index}}">x</view>
+      <view style="{{delIng_TXT}}" bindtap="deleteIngredient" id="{{index}}">删除</view>
     </block>
     <view bindtap="addIngredient" style="display:inline-block;float:left;">再增加一行</view>
     <view bindtap="deleteButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delIng_tag}}</view>
@@ -44,7 +44,7 @@
         <image src="{{Methods[index].Method_img}}" style="{{methodimg[index]}}width: 650rpx;height: 650rpx;"></image>
       </view>
       <input placeholder="添加步骤说明" bindinput="inputMethod" id="{{index}}" value="{{item.Method_txt}}"></input>
-      <view style="{{delMethod_TXT}}" bindtap="deleteMethod" id="{{index}}">0</view>
+      <view style="{{delMethod_TXT}}" bindtap="deleteMethod" id="{{index}}">删除</view>
     </block>
     <view bindtap="addMethod" style="display:inline-block;float:left;">再增加一行</view>
     <view bindtap="delMethodButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delMethod_tag}}</view>
@@ -60,18 +60,18 @@
     <input placeholder="讲讲食谱背后的故事吧" bindinput="inputStory" value="{{Story}}"></input>
   </view>
   <!-- 标签 -->
-  <view style="border-bottom:2rpx solid #BBBBBB;overflow:auto;margin-right:50rpx;" bindtap="classfy">
+  <!-- <view style="border-bottom:2rpx solid #BBBBBB;overflow:auto;margin-right:50rpx;" bindtap="classfy">
     <view style="float:left">推荐至分类</view>
     <view style="float:right;">></view>
-  </view>
+  </view> -->
   <button class="last_step" bindtap="back">上一步</button>
   <button class="end" bindtap="end">发布</button>
 </view>
 
-<view id="p3" style="{{show3}}">
+<!-- <view id="p3" style="{{show3}}">
   <view wx:for="{{Tags}}" wx:for-item="a" wx:for-index="i" class="TagList">
     <view class="Tag_choose" id="{{a.Tag_id}}" data-id="{{i}}" bindtap="Choose">{{a.TagName}}</view>
   </view>
   <button class="cancel" bindtap="cancel">取消</button>
   <button class="save" bindtap="save">保存</button>
-</view>
+</view> -->

@@ -24,11 +24,11 @@
   <view>{{method.Method_txt}}</view>
 </view>
 <view class="gs">
-  <view>图谱故事</view>
+  <view>食谱故事</view>
   <view>{{test[0].Story}}</view>
 </view>
 <view class="gs">
-  <view>难点</view>
+  <view>难点</view> 
   <view>{{test[0].Difficulty}}</view>
 </view>
 <view class="talk" wx:for="{{content}}" wx:for-item="a" wx:for-index="i">

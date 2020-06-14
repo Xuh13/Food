@@ -78,7 +78,7 @@ Page({
       // 传给云函数的参数
       success(res) {
         console.log(res)
-        if(res.result!=null){
+        if(res.result.data.length!=0){
           that.setData({
             collect_choose: 1
           })

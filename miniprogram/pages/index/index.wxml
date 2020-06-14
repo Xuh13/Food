@@ -1,24 +1,24 @@
 <view class="Search">
   <input class="S_input" placeholder="搜索" value="{{Search}}" bindinput="inputSearch" bindconfirm='search'></input>
 </view>
- 
+  
 <view>
   <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" circular="true">
-    <swiper-item>
-      <image src="../../images/cai1.png" class="swiper-image"> </image>
+    <swiper-item wx:for="{{list}}" wx:for-item="a"> 
+      <image src="{{a.Cover}}" class="swiper-image" data-rid="{{a.Recipe_id}}" bindtap="jump"> </image>
     </swiper-item>
-    <swiper-item>
+    <!-- <swiper-item>
       <image src="../../images/cai2.png" class="swiper-image"></image>
     </swiper-item>
     <swiper-item>
       <image src="../../images/cai3.png" class="swiper-image"></image>
-    </swiper-item>
+    </swiper-item> -->
   </swiper>
 </view>
 
 <view class="mid-Content">
   <text class="NowDate">{{nowDate}}</text>
-  <text class="dishName">蒸扇贝</text>
+  <text class="dishName">愿您度过美好的一天</text>
 </view>
 <button class="uploadFile" bindtap="goToShareMine">分享我的食谱</button>
 

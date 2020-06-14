@@ -32,8 +32,8 @@
       "iconPath": "images/main1.png",
       "selectedIconPath": "images/main2.png"
     },{
-      "pagePath": "pages/search/search",
-      "text": "搜索",
+      "pagePath": "pages/category/category",
+      "text": "分类",
       "iconPath": "images/search1.png",
       "selectedIconPath": "images/search2.png"
     },{
