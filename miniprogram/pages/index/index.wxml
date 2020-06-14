@@ -22,7 +22,7 @@
 </view>
 <button class="uploadFile" bindtap="goToShareMine">分享我的食谱</button>
 
-<van-tabs active="{{ active }}" bind:change="onChange">
+<!-- <van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="今日排行">
     <view class="dishContent">
       <view class="dishContainer">
@@ -34,6 +34,4 @@
   </van-tab>
   <van-tab title="本周排行">内容 2</van-tab>
   <van-tab title="最多点击">内容 3</van-tab>
-</van-tabs>
-
->>>>>>> Stashed changes
+</van-tabs> -->

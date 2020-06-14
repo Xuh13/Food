@@ -1,22 +1,20 @@
 // pages/category/category.js
 Page({
-  search: function(value) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([{
-          text: '搜索结果',
-          value: 1
-        }, {
-          text: '搜索结果2',
-          value: 2
-        }])
-      }, 200)
-    })
-  },
+  
   selectResult: function(e) {
     console.log('select result', e.detail)
   },
-
+  search(e) {
+    console.log(this.data.Search)
+    wx.navigateTo({
+      url: '../search_list/search_list?id=' + this.data.Search + '&type=1',
+    })
+  },
+  inputSearch(e) {
+    this.setData({
+      Search: e.detail.value
+    })
+  },
   /**
    * 页面的初始数据
    */
@@ -48,12 +46,12 @@ Page({
 
   jump:function(event){
     wx.navigateTo({
-      url: '/pages/search_list/search_list?id=' + event.currentTarget.id,
+      url: '/pages/search_list/search_list?id=' + event.currentTarget.id+"&type=0",
     })
 
   },
 
-  /**
+  /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
@@ -74,8 +72,6 @@ Page({
       },
       fail: console.error
     })
-
-    search: this.search.bind(this)
     
   },
 

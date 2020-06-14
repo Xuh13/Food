@@ -6,7 +6,8 @@ Page({
     */
 
   data: {
-    status: status
+    status: status,
+    collect:[]
   },
 
 
@@ -66,7 +67,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     console.log(options);
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'mine',
+      // 传给云函数的参数
+      success(res) {
+        console.log(res.result.data)
+        that.setData({
+          collect: res.result.data
+        })
+      },
+      fail: console.error
+    })
+  },
+
+  myRecipe(){
+    let u = '../search_list/search_list?id=0&type=2';
+    wx.navigateTo({
+      url: u
+    })
+  },
+  myCollection(){
+    let u = '../search_list/search_list?id=0&type=3';
+    wx.navigateTo({
+      url: u
+    })
   },
 
   /**

@@ -53,23 +53,23 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/flist/flist",
-					"pathName": "pages/flist/flist",
-					"query": "food_id=5b540668-7d31-431f-b530-688e0d17ce5b",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
 					"query": "",
 					"scene": null
 				},
 				{
+					"id": 1,
+					"name": "pages/comment/comment",
+					"pathName": "pages/comment/comment",
+					"query": "id=5b540668-7d31-431f-b530-688e0d17ce5b",
+					"scene": null
+				},
+				{
 					"id": 2,
-					"name": "pages/search_list/search_list",
-					"pathName": "pages/search_list/search_list",
-					"query": "id=螃蟹&type=1",
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
 					"scene": null
 				}
 			]

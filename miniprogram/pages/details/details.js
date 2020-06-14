@@ -55,7 +55,8 @@ Page({
     Recipe_Tags: [],
     images: [],
     Methods_name:[],
-    Cover_name:''
+    Cover_name:'',
+    Tags:[]
   },
 
   chooseImage(e) {
@@ -223,12 +224,33 @@ Page({
     })
   },
 
+  Choose(e){
+    let id = e.currentTarget.id;
+    let index = e.currentTarget.dataset.id;
+    console.log(e)
+    console.log("id="+id)
+    console.log("index="+index);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     this.setData({
       page_num: 1
+    })
+    let that = this
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'details_tag',
+      // 传给云函数的参数
+      success(res) {
+        console.log(res)
+        that.setData({
+          Tags:res.result.data
+        })
+      },
+      fail: console.error
     })
   },
 
@@ -448,7 +470,8 @@ Page({
             Difficulty: that.data.Difficulty,
             Story: that.data.Story,
             Recipe_Tags: that.data.Recipe_Tags,
-            Number:that.data.array[that.data.index]
+            Number:that.data.array[that.data.index],
+            Tags:that.data.Tags
           },
           success(res) {
             console.log("success")

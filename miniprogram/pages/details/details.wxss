@@ -1,10 +1,13 @@
 /* pages/details/details.wxss */
-#p1,#p2{
-  margin-left: 50rpx;
+#p1,
+#p2 {
+  margin-left: 30rpx;
   margin-top: 25rpx;
+  padding-bottom: 50rpx;
 }
 
-.title_input{
+.title_input {
+  margin-bottom: 30rpx;
   width: 650rpx;
   height: 100rpx;
   line-height: 100rpx;
@@ -13,18 +16,17 @@
   font-size: 40rpx;
 }
 
-.next_step{
-  margin-top: 60rpx;
+.next_step {
   display: inline-block;
   float: right;
   border: 2rpx solid #BBBBBB;
   border-radius: 20rpx;
   width: 300rpx !important;
   height: 60rpx;
-  color: #000000 !important ;
+  color: #000000 !important;
 }
 
-.last_step{
+.last_step {
   margin-top: 60rpx;
   display: inline-block;
   float: left;
@@ -32,22 +34,22 @@
   border-radius: 20rpx;
   width: 300rpx !important;
   height: 60rpx;
-  color: #000000 !important ;
+  color: #000000 !important;
 }
 
-.end{
+.end {
   margin-top: 60rpx;
   margin-right: 50rpx !important;
   display: inline-block;
   float: right;
-  border: 2rpx solid #BBBBBB;
+  border: 2rpx solid #00B26A;
   border-radius: 20rpx;
   width: 300rpx !important;
   height: 60rpx;
-  color: #000000 !important ;
+  color: #00B26A !important;
 }
 
-.title{
+.title {
   width: 650rpx;
   height: 100rpx;
   font-size: 54rpx;
@@ -56,8 +58,8 @@
   border-bottom: 2rpx solid #BBBBBB;
 }
 
-.cover{
-  margin-top:50rpx;
+.cover {
+  margin-top: 20rpx;
   width: 650rpx;
   height: 650rpx;
   text-align: center;
@@ -65,27 +67,31 @@
   background-color: #F0F0F0;
 }
 
-.cover_txt{
+.cover_txt {
   width: 650rpx;
   height: 650rpx;
   position: absolute;
 }
 
-.instruction{
-  margin-top:25rpx;
+.instruction {
+  margin-top: 25rpx;
   width: 650rpx;
   height: 250rpx;
   text-align: center;
   line-height: 250rpx;
-  border: 2rpx solid #F0F0F0;
+  border: 2rpx solid #777777;
 }
 
-.Ingredients{
-  width:325rpx;
-  display:inline-block;
+.Ingredients {
+  padding: 0 15rpx;
+  border: 3rpx solid #767676;
+  border-radius: 20rpx;
+  width: 280rpx;
+  margin-right: 20rpx;
+  display: inline-block;
 }
 
-.cancel{
+.cancel {
   width: 200rpx !important;
   height: 50rpx;
   display: inline-block;
@@ -94,11 +100,62 @@
   margin-left: 80rpx !important;
 }
 
-.save{
+.save {
   width: 200rpx !important;
   height: 50rpx;
   display: inline-block;
   border: 2rpx solid #000000;
   float: right;
   margin-right: 80rpx !important;
+}
+
+.ts {
+  height: 70rpx;
+  color: rgba(0, 0, 0, 0.81);
+  background-color: #cdcdcd;
+  font-size: 35rpx;
+  padding-top: 10rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+
+.line {
+  height: 1rpx;
+  padding: 5rpx 0;
+  border-bottom: 3rpx solid #CDCDCD;
+  width: 90%;
+  overflow: hidden
+}
+
+.section {
+  margin-top: 10rpx;
+}
+
+.add {
+  margin-top: 10rpx;
+}
+
+.scbz {
+  color: red;
+}
+
+.Tag{
+  height:50rpx;
+  width: 100rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 50rpx;
+}
+
+.Tag_choose{
+  height:50rpx;
+  width: 100rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 50rpx;
+  background-color: green;
+  color:white;
 }

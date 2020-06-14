@@ -29,21 +29,13 @@
     <block wx:for="{{Ingredients}}" wx:key="index" style="border-bottom:2rpx solid #F0F0F0;">
       <input placeholder="食材:如鸡蛋" class="Ingredients" value="{{item.Ingredients_name}}" bindinput="inputIngredients_name" id="{{index}}"></input>
       <input placeholder="用量:如1个" class="Ingredients" value="{{item.Ingredients_dosage}}" bindinput="inputIngredients_dosage" id="{{index}}"></input>
-      <view style="{{delIng_TXT}}" bindtap="deleteIngredient" id="{{index}}">0</view>
+      <view style="{{delIng_TXT}}" bindtap="deleteIngredient" id="{{index}}">x</view>
     </block>
     <view bindtap="addIngredient" style="display:inline-block;float:left;">再增加一行</view>
     <view bindtap="deleteButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delIng_tag}}</view>
   </view>
-  <view class="section">
-  <view class="section__title">普通选择器</view>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      当前选择：{{array[index]}}
-    </view>
-  </picker>
-</view>
-  <!-- 做法 -->
-  <view>
+  
+  <view style="block">
     <view>做法</view>
     <block wx:for="{{Methods}}" wx:key="index">
       <view>步骤{{index+1}}</view>
@@ -77,6 +69,9 @@
 </view>
 
 <view id="p3" style="{{show3}}">
+  <view wx:for="{{Tags}}" wx:for-item="a" wx:for-index="i" class="TagList">
+    <view class="Tag_choose" id="{{a.Tag_id}}" data-id="{{i}}" bindtap="Choose">{{a.TagName}}</view>
+  </view>
   <button class="cancel" bindtap="cancel">取消</button>
   <button class="save" bindtap="save">保存</button>
 </view>

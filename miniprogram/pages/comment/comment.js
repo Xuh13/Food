@@ -46,10 +46,11 @@ Page({
       nowDate: that.CurrentTime(),
       food_id: 0
     })
+    console.log(options.id)
     wx.cloud.callFunction({
       // 云函数名称
       name: 'comment_in',
-      // 传给云函数的参数
+      // 传给云函数的参数 
       data: {
         id:options.id
       },

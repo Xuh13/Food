@@ -8,12 +8,9 @@ Page({
     dz: '/images/sc.png',
     test:[],
     content:[],
-    up:{}
-  },
-  gotosc: function () {
-    this.setData({
-      dz: '/images/sc2.png'
-    })
+    up:{},
+    collect: ['../../images/collect.png', '../../images/collection.png'],
+    collect_choose:0
   },
   // goto: function (event) {
   //   console.log(event)
@@ -60,7 +57,10 @@ Page({
       success(res) {
         console.log(res);
         that.setData({
-          up: res.result.data
+          up :{
+            Head:res.result.data[0].Head,
+            UserName: res.result.data[0].UserName
+          }
         })
 
       },
@@ -68,45 +68,74 @@ Page({
     })
   },
   c(){
-    let that = this
+    let that =this
     wx.cloud.callFunction({
       // 云函数名称
-      name: 'flist_comment',
-      // 传给云函数的参数
-      data: {
-        id: that.data.test[0].Recipe_id
+      name: 'mine',
+      data:{
+        Recipe:that.data.test[0].Recipe_id
       },
+      // 传给云函数的参数
       success(res) {
-        console.log(res);
-        that.setData({
-          up: res.result.data
-        })
+        console.log(res)
+        if(res.result!=null){
+          that.setData({
+            collect_choose: 1
+          })
+        }
+        
       },
       fail: console.error
     })
+  },
+  collection(e){
+    console.log(this.data.test[0].Recipe_id)
+    let that = this
+    if(this.data.collect_choose == 0){
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'flist_collection',
+        // 传给云函数的参数
+        data: {
+          id: that.data.test[0].Recipe_id,
+          type: 0
+        },
+        success(res) {
+          that.setData({
+            collect_choose:1
+          })
+        },
+        fail: console.error
+      })
+    }else{
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'flist_collection',
+        // 传给云函数的参数
+        data: {
+          id: that.data.test[0].Recipe_id,
+          type: 1
+        },
+        success(res) {
+          console.log(res)
+          that.setData({
+            collect_choose: 0
+          })
+        },
+        fail: console.error
+      })
+    }
+     
   },
   onLoad: function (options) {
     console.log(options)
     let that = this;
     this.a(options.food_id).then(success=>{
-      console.log(that.data.test[0].Recipe_Up)
+      console.log()
       that.b()
+      that.c()
     })
-    // wx.cloud.callFunction({
-    //   // 云函数名称
-    //   name: 'flist_comment',
-    //   // 传给云函数的参数
-    //   data: {
-    //     id: options.food_id
-    //   },
-    //   success(res) {
-    //     console.log(res);
-    //     that.setData({
-    //       content: res.result.list
-    //     })
-    //   },
-    //   fail: console.error
-    // })
+   
   },
 
   /**
@@ -156,5 +185,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  q(){
+    console.log(this.data.up)
   }
 })

@@ -1,19 +1,14 @@
 <!--pages/flist/flist.wxml-->
-<view class="tit-top">分类</view>
 <image src="{{test[0].Cover}}"></image>
 <view class="tit">{{test[0].Title}}</view>
 <view class="my-name">
   <!-- <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取用户</button> -->
   <view class="myimg">
-    <open-data type="userAvatarUrl"></open-data>
+    <image src="{{up.Head}}" style="width: 150rpx;height: 150rpx;"></image>
   </view>
-  <open-data type="userNickName" class="myname"></open-data>
-  <image src='{{dz}}' class="mysc" bindtap="gotosc"></image>
-  <!-- <van-rate
-    value="{{ value }}"
-    count="{{ 1 }}"
-    bind:change="onChange"
-  /> -->
+  <view  class="myname">{{up.UserName}}</view>
+  <image src='{{collect[collect_choose]}}' class="mysc"  bindtap="collection"></image>
+  
 </view>
 <view>{{test[0].Introduction}}</view>
 <view class="cl">

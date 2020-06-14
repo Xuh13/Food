@@ -1,4 +1,4 @@
-.page{
+/* .page{
 margin-right:20rpx;
 margin-left:20rpx;
 margin-top:35rpx;
@@ -10,7 +10,6 @@ margin-right:-30rpx;
 margin-left:10rpx;
 padding-top: 10rpx;
 padding-left: 10rpx;
-/* background: #d8d8d8; */
 }
 
 .headpor{
@@ -25,7 +24,6 @@ width: 375rpx;
 margin-left:-95rpx;
 padding-top: 5rpx;
 padding-bottom: 20rpx;
-/* background: #e5a0a0; */
 font-size:36rpx;
 font-family:"STKaiti",Georgia,Serif;
 font-weight:bold;
@@ -64,7 +62,6 @@ font-family:"STKaiti",Georgia,Serif;
   height: 80rpx;
   margin-top: 32rpx;
   color: black;
-  /* margin-left: 10rpx; */
   left: 80rpx;
 }
 .list-more{
@@ -93,7 +90,7 @@ font-family:"STKaiti",Georgia,Serif;
     }
  
     to {
-        height: 210rpx;/* 设置显示的长度  和效果配合才有效  这个不写也行 */
+        height: 210rpx;
     }
 }
 .namepro{
@@ -163,7 +160,6 @@ font-size: 35rpx;
 .title {
   width: 100%;
   height: 88rpx;
-  /* background: white; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -199,4 +195,114 @@ font-size: 35rpx;
   width: 90rpx;
   position: relative;
   margin-top: 10rpx;
+} */
+
+.page{
+  background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1336543535,700493399&fm=26&gp=0.jpg);
+  height: 1334rpx;
 }
+
+.page__hd{
+margin-top:60rpx;
+margin-bottom :30rpx;
+/* margin-right:-30rpx; */
+/* margin-left:10rpx; */
+padding-top: 6rpx;
+/* padding-left: 10rpx; */
+/* background: #d8d8d8; */
+}
+
+.HeadPortrait{
+height: 200rpx;
+width: 750rpx;
+margin-left:277rpx;
+margin-top:30rpx;
+margin-bottom :30rpx;
+}
+.headpor{
+height: 200rpx;
+width: 200rpx;
+border-radius:80%;
+overflow:hidden;
+}
+.name{
+height: 48rpx;
+width: 750rpx;
+padding-bottom: 35rpx; 
+/* background: #e5a0a0; */
+font-size:36rpx;
+font-family:"STKaiti",Georgia,Serif;
+font-weight:bold;
+text-align: center;
+/* margin-top:30rpx; */
+margin-bottom :30rpx;
+}
+
+.shouc{
+height: 100rpx;
+width: 750rpx;
+background: #dfe2db;
+margin-top:20rpx;
+margin-bottom:20rpx;
+border-top-left-radius:40rpx;
+border-top-right-radius:40rpx;
+border-bottom-left-radius:40rpx;
+border-bottom-right-radius:40rpx;
+overflow:hidden;
+}
+.shouc1{
+  width: 60rpx;
+  float: left;
+  padding-top: 26rpx;
+}
+
+.shoucj{
+height: 60rpx;
+width: 60rpx;
+}
+.shouc2{
+width: 675rpx;
+float: right;
+padding-top: 23rpx;
+}
+.shoucj2{
+font-size:36rpx;
+font-family:"STKaiti",Georgia,Serif;
+font-weight:bold;
+}
+.max{
+  padding-top: 35rpx;
+}
+
+
+
+
+
+
+
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;/* 设置显示的长度  和效果配合才有效  这个不写也行 */
+    }
+}
+.namepro{
+border-bottom: 4rpx solid rgb(219, 215, 215);
+  padding-top: 15rpx;
+
+}
+.weui-cells{
+  left: 20rpx;
+  right: 10rpx;
+}
+.weui-textarea{
+  height: 110rpx;
+background: rgb(246, 246, 246);
+font-family:"STKaiti",Georgia,Serif;
+font-size: 35rpx;
+}
+
+

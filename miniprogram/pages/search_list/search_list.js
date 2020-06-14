@@ -11,25 +11,7 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
-    box_list: [{
-      id: 0,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜1.jpg",
-      name: "醋溜白菜",
-      txt: "酸酸辣辣的，这酸爽~~~O(∩_∩)O~",
-      tags: ["蔬菜","白菜","酸辣"]
-    }, {
-      id: 1,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜2.jpg",
-      name: "干煸白菜",
-      txt: "如果把酸辣土豆丝比喻为“大众情人”的话 那么干煸白菜就是“梦中情人",
-      tags: ["家常菜","秋季食谱"]
-    }, {
-      id: 2,
-      src: "cloud://recipes-obnmd.7265-recipes-obnmd-1301654443/白菜3.jpg",
-      name: "砂锅白菜炖豆腐",
-      txt: "白菜最家常的做法就是大白菜和豆腐一起炖烧了，做法简单却是营养滋补",
-      tags: ["家常菜","冬季食谱"]
-    }],
+    collect:[],
     test:[]
   },
 
@@ -47,30 +29,75 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  getCollection(){
+    let that = this
+    return new Promise((resolve,reject)=>{
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'mine',
+        // 传给云函数的参数
+        success(res) {
+          let collection = []
+          for(let i = 0 ;i<res.result.data.length;i++){
+            collection.push(res.result.data[i].Recipe_id)
+          }
+          that.setData({
+            collect: collection
+          })
+          resolve()
+        },
+        fail: console.error
+      })
+    })
+  },
   onLoad: function (options) {
     let that = this;
     //分类搜索  关键字 
-    if(options.type==1){
-      this.setData({
-        Search:options.id
+    if (options.type == 3) {
+      this.getCollection().then(success => {
+        console.log(that.data.collect[0])
+        wx.cloud.callFunction({
+          // 云函数名称
+          name: 'search_list_in',
+          // 传给云函数的参数
+          data: {
+            id: options.id,
+            type: options.type,
+            collect: that.data.collect
+          },
+          success(res) {
+            console.log(res)
+            that.setData({
+              test: res.result.data
+            })
+          },
+          fail: console.error
+        })
+      })
+    }else{
+      if (options.type == 1) {
+        this.setData({
+          Search: options.id
+        })
+      }
+      wx.cloud.callFunction({
+        // 云函数名称
+        name: 'search_list_in',
+        // 传给云函数的参数
+        data: {
+          id: options.id,
+          type: options.type
+        },
+        success(res) {
+          console.log(res)
+          that.setData({
+            test: res.result.data
+          })
+        },
+        fail: console.error
       })
     }
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'search_list_in',
-      // 传给云函数的参数
-      data: {
-        id: options.id,
-        type:options.type
-      },
-      success(res) {
-        console.log(res)
-        that.setData({
-          test: res.result.data
-        })
-      },
-      fail: console.error
-    })
+    
     search: this.search.bind(this)
  
   },

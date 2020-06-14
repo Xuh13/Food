@@ -15,10 +15,12 @@
     <block wx:for="{{dishesList[curIndex]}}" wx:key="index">
         <view class="dish" catchtap="selectDish">
             <view class="flex-item">
-                <image src='/images/ms.png' class="img"></image>
+                <image src='/images/ms.png' class="r-img"></image>
                 <text class="r-title">{{item.name}}</text>
                 <!-- <button bindtap="gotoComment" data-movieid="{{item.id}}" class="movie-comment">评价</button> -->
-                <button class="r-button" bindtap="gotoComment" data-food_id="{{item.food_id}}">前往</button>
+                <!-- <view class="r-button"><button bindtap="gotoComment" data-food_id="{{item.food_id}}">前往</button></view> -->
+                <view class="r-button" bindtap="gotoComment" data-food_id="{{item.food_id}}">前往</view>
+                <!-- <button class="r-button" bindtap="gotoComment" data-food_id="{{item.food_id}}">前往</button> -->
             </view>
         </view>
     </block>

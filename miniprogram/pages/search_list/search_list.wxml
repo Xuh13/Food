@@ -5,7 +5,7 @@
   <input class="S_input" placeholder="搜索" value="{{Search}}" bindinput="inputSearch" bindconfirm='search'></input>
 </view>
 <view class="search_list_box" wx:for="{{test}}" wx:for-item="aaa">
-  <view id="{{aaa.Recipes_id}}" bindtap="jump">
+  <view id="{{aaa.Recipe_id}}" bindtap="jump">
     <image src="{{aaa.Cover}}" class="search_list_img"></image>
     <view class="search_list_box_txt">
       <text class="search_list_box_name">{{aaa.Title}}</text>
