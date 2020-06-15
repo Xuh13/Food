@@ -34,9 +34,8 @@
     <view bindtap="addIngredient" style="display:inline-block;float:left;">再增加一行</view>
     <view bindtap="deleteButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delIng_tag}}</view>
   </view>
-  
   <view style="block">
-    <view>做法</view>
+    <view>+</view>
     <block wx:for="{{Methods}}" wx:key="index">
       <view>步骤{{index+1}}</view>
       <view class="cover" bindtap="methodImage" id="{{index}}">
@@ -46,7 +45,7 @@
       <input placeholder="添加步骤说明" bindinput="inputMethod" id="{{index}}" value="{{item.Method_txt}}"></input>
       <view style="{{delMethod_TXT}}" bindtap="deleteMethod" id="{{index}}">删除</view>
     </block>
-    <view bindtap="addMethod" style="display:inline-block;float:left;">再增加一行</view>
+    <view bindtap="addMethod" style="display:inline-block;float:left;">再增加一行+</view>
     <view bindtap="delMethodButton" style="display:inline-block;float:right;margin-right:50rpx;">{{delMethod_tag}}</view>
   </view>
   <!-- 难点 -->

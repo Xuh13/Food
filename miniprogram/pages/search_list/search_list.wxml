@@ -11,7 +11,7 @@
       <text class="search_list_box_name">{{aaa.Title}}</text>
       <text class="search_list_box_synopsis">{{aaa.Introduction}}</text>
       <text class="search_list_box_tag">
-      <text wx:for="{{aaa.Recipe_Tags}}" wx:for-item="bbb">#{{bbb}}</text>
+      <!-- <text wx:for="{{aaa.Recipe_Tags}}" wx:for-item="bbb">#{{bbb}}</text> -->
       </text>
     </view>
   </view>
